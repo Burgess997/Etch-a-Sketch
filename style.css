@@ -1,7 +1,17 @@
 body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 219, 219);
+    font-family: sans-serif;
+}
+
+.content-container {
     display: flex;
     justify-content: center;
     background-color: rgb(219, 219, 219);
+    margin: 0;
+    padding: 0;
 }
 .button-container{
     flex: 1;
@@ -17,9 +27,8 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
   flex: 1;
-  padding-right: 10vw;
+  padding: 6vw;
 }
 
 button {
@@ -28,6 +37,7 @@ button {
     color: white;
     width: 200px;
     height: 100px;
+    font-size: 20px;
 }
 
 .etch {
@@ -47,4 +57,16 @@ button {
 #grid-box {
   background-color: grey;
   border: 0px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(71, 71, 71);
+    text-align: center;
+    color: white;
+    height: 100px;
+    font-size: 40px;
+
 }

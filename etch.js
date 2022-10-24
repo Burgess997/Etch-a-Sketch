@@ -48,7 +48,7 @@ function createGrid(gridSize) {
 }
 
 function boxClicked(box) {
-  box.style.backgroundColor = "red";
+  box.style.backgroundColor = "black";
 }
 
 function clearGrid() {
