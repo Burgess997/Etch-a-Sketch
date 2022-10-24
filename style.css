@@ -1,28 +1,25 @@
-
-
 .etch-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .etch {
-    background-color: grey;
-    height: 500px;
-    width: 500px;
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #grid-box {
-    flex: auto;
-    background-color: grey;
+  background-color: grey;
+  border: 0px;
 }

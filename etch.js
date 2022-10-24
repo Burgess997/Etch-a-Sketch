@@ -1,5 +1,6 @@
 let etch = document.querySelector(".etch");
-let box = document.createElement("div");
+var createButton = document.querySelector("#create-button");
+var clearButton = document.querySelector("#clear-button");
 var mouseDown = 0;
 
 document.body.onmousedown = function () {
@@ -9,14 +10,25 @@ document.body.onmouseup = function () {
   --mouseDown;
 };
 
+createButton.addEventListener("click", () => {
+  let size = prompt("What Sized Grid?");
+  if (parseInt(size) == 0) {
+    return;
+  }
+  clearGrid();
+  createGrid(parseInt(size));
+});
+
+clearButton.addEventListener("click", () => {clearGrid()});
+
 createGrid(16);
 
-
 function createGrid(gridSize) {
+  let box = document.createElement("div");
   box.id = "grid-box";
-  box.style.width = (500 / gridSize).toString().concat("px");
+  box.style.width = (500 / gridSize - 0.0045).toString().concat("px");
   box.style.height = (500 / gridSize).toString().concat("px");
-  for (let i = 0; i < gridSize * gridSize - 1; i++) {
+  for (let i = 0; i < (gridSize * gridSize); i++) {
     let boxClone = box.cloneNode();
     etch.appendChild(boxClone);
     boxClone.addEventListener("mouseover", () => {
@@ -25,7 +37,7 @@ function createGrid(gridSize) {
       }
     });
     boxClone.addEventListener("mousedown", () => {
-        boxClicked(boxClone);
+      boxClicked(boxClone);
     });
   }
 }
@@ -34,8 +46,8 @@ function boxClicked(box) {
   box.style.backgroundColor = "red";
 }
 
-function clearGrid(){
-    while(etch.lastElementChild){
-        etch.removeChild(etch.lastElementChild)
-    }
+function clearGrid() {
+  while (etch.lastElementChild) {
+    etch.removeChild(etch.lastElementChild);
+  }
 }
