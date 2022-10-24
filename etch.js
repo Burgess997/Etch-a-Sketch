@@ -9,7 +9,7 @@ document.body.onmouseup = function () {
   --mouseDown;
 };
 
-createGrid(16);
+createGrid(64);
 
 function createGrid(gridSize) {
   box.id = "grid-box";
@@ -18,17 +18,17 @@ function createGrid(gridSize) {
   for (let i = 0; i < gridSize * gridSize; i++) {
     let boxClone = box.cloneNode();
     etch.appendChild(boxClone);
-    boxClone.addEventListener("mouseover", (box) => {
+    boxClone.addEventListener("mouseover", () => {
       if (mouseDown == 1) {
-        boxClicked(boxClone, box);
+        boxClicked(boxClone);
       }
     });
-    boxClone.addEventListener("mousedown", (box) => {
-        boxClicked(boxClone, box);
+    boxClone.addEventListener("mousedown", () => {
+        boxClicked(boxClone);
     });
   }
 }
 
-function boxClicked(box, eventData) {
+function boxClicked(box) {
   box.style.backgroundColor = "red";
 }
