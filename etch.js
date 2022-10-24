@@ -13,12 +13,13 @@ function createGrid(gridSize){
     for (let i = 0; i < gridSize * gridSize; i++){
         let boxClone = box.cloneNode()
         etch.appendChild(boxClone);
-        boxClone.addEventListener('click', (box) => {
-            boxClicked(box)
+        boxClone.addEventListener('click', () => {
+            boxClicked(boxClone)
         })
     }
 }
 
-function boxClicked() {
-
+function boxClicked(box) {
+    box.style.backgroundColor = "red"
+    console.log(box)
 }
