@@ -2,6 +2,7 @@ let etch = document.querySelector(".etch");
 var createButton = document.querySelector("#create-button");
 var clearButton = document.querySelector("#clear-button");
 var mouseDown = 0;
+var lastUsedSize = 16
 
 document.body.onmousedown = function () {
   ++mouseDown;
@@ -17,9 +18,13 @@ createButton.addEventListener("click", () => {
   }
   clearGrid();
   createGrid(parseInt(size));
+  lastUsedSize = size
 });
 
-clearButton.addEventListener("click", () => {clearGrid()});
+clearButton.addEventListener("click", () => {
+    clearGrid()
+    createGrid(lastUsedSize)
+});
 
 createGrid(16);
 
