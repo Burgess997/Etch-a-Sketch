@@ -1,8 +1,10 @@
 let etch = document.querySelector(".etch");
 var createButton = document.querySelector("#create-button");
 var clearButton = document.querySelector("#clear-button");
+var rainbowButton = document.querySelector("#rainbow-button");
 var mouseDown = 0;
-var lastUsedSize = 16
+var lastUsedSize = 16;
+var rainbowMode = false;
 
 document.body.onmousedown = function () {
   ++mouseDown;
@@ -24,6 +26,10 @@ createButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
     clearGrid()
     createGrid(lastUsedSize)
+});
+
+rainbowButton.addEventListener("click", () => {
+    rainbowMode ? rainbowMode = false : rainbowMode = true;
 });
 
 createGrid(16);
@@ -48,6 +54,10 @@ function createGrid(gridSize) {
 }
 
 function boxClicked(box) {
+    if (rainbowMode){
+        box.style.backgroundColor = getRandomColor()
+        return
+    }
   box.style.backgroundColor = "black";
 }
 
@@ -56,3 +66,13 @@ function clearGrid() {
     etch.removeChild(etch.lastElementChild);
   }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
