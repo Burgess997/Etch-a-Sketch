@@ -11,6 +11,7 @@ document.body.onmouseup = function () {
 
 createGrid(16);
 
+
 function createGrid(gridSize) {
   box.id = "grid-box";
   box.style.width = (500 / gridSize).toString().concat("px");
@@ -31,4 +32,10 @@ function createGrid(gridSize) {
 
 function boxClicked(box) {
   box.style.backgroundColor = "red";
+}
+
+function clearGrid(){
+    while(etch.lastElementChild){
+        etch.removeChild(etch.lastElementChild)
+    }
 }
