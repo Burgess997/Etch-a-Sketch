@@ -1,8 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(219, 219, 219);
+}
+.button-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 25px;
+    padding: 45px
+}
+
 .etch-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  flex: 1;
+  padding-right: 10vw;
+}
+
+button {
+    border:  0;
+    background-color: rgb(82, 82, 82);
+    color: white;
+    width: 200px;
+    height: 100px;
 }
 
 .etch {
