@@ -1,0 +1,16 @@
+
+
+.etch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.etch {
+    background-color: grey;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
