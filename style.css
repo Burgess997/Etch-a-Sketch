@@ -23,5 +23,6 @@
 }
 
 #grid-box {
+    flex: auto;
     background-color: grey;
 }
